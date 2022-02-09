@@ -1496,6 +1496,15 @@ input.error {
   opacity: 1;
 }
 
+.active {
+  display: block;
+}
+
+.no-active{
+  display: none;
+}
+
+
 .balkony #offer {
   background: url(../images/offer-bg.jpg) no-repeat 50% 50%;
   background-size: cover;
@@ -1594,11 +1603,14 @@ input.error {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  text-align: center;
 }
 
 .benefits__item {
   width: 100%;
   max-width: 185px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .benefits-arrows {
