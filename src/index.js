@@ -1,5 +1,6 @@
 import { modal } from "./modules/modal";
 import { sliderMobile, sliderDesktop } from "./modules/slider";
+import { timer } from "./modules/timer";
 
 modal('.header-modal', '.button', '.header-modal__close', 1);
 modal('.services-modal', '.service-button', '.services-modal__close', 4);
@@ -11,3 +12,7 @@ if (document.documentElement.clientWidth > 576) {
     sliderMobile('benefits', '.benefits__item', '.benefits__arrow--right', '.benefits__arrow--left');
     sliderMobile('services', '.service-block', '.services__arrow--right', '.services__arrow--left');
 }
+
+
+timer('10 march 2022', 'order_1');
+timer('10 march 2022', 'order_2');
