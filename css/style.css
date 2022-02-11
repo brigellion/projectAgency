@@ -9,6 +9,7 @@ body {
   font-weight: 300;
   color: #4f686e;
 }
+
 h2 span {
   font-family: "NeoSansCyr-Medium", sans-serif;
 }
@@ -1676,6 +1677,9 @@ input.error {
   bottom: 25px;
   transform: rotate(90deg);
 }
+
+
+
 
 @media (min-width: 576px) {
   .benefits-wrap {
