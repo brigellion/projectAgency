@@ -24,7 +24,6 @@ export const modal = (window, butt, closeButt, numBtn) => {
         });
     } else {
         const buttons = document.querySelectorAll(butt);
-        console.log(buttons);
         buttons.forEach(element => {
             element.addEventListener('click', (e) => {
                 if (e.target.closest('.fancyboxModal')) {
