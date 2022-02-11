@@ -3,7 +3,7 @@ import { sendForm } from "./modules/sendForm";
 import { sliderMobile, sliderDesktop } from "./modules/slider";
 import { timer } from "./modules/timer";
 import { validator } from "./modules/validator";
-import { sendForm } from "./modules/sendForm";
+import { modalImg } from "./modules/modalImg";
 
 modal('.header-modal', '.button', '.header-modal__close', 1);
 modal('.services-modal', '.service-button', '.services-modal__close', 4);
@@ -25,3 +25,4 @@ validator();
 sendForm('.order-form form[name=action-form]');
 sendForm('.order-form form[name=action-form2]');
 
+modalImg();
