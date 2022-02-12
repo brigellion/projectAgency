@@ -1,7 +1,7 @@
 export const sendForm = (formName, total) => {
     const form = document.querySelector(formName);
     const statusBlock = document.createElement('div');
-    statusBlock.textContent = 'Спасибо! Мы скоро Вам позвоним';
+    const calcTotal = document.querySelector('#calc-total');
     let price;
 
     if (total) {
@@ -59,6 +59,18 @@ export const sendForm = (formName, total) => {
         formData.forEach((val, key) => {
             formBody[key] = val;
         });
+
+        if (formBody.page == 'Балконы') {
+            const calcTotal = document.querySelector('#calc-total');
+            if (calcTotal.value) {
+                formBody.calcPrice = calcTotal.value;
+            } else {
+                const calcBlock = document.querySelector('#calc');
+                calcBlock.scrollIntoView({ behavior: "smooth" });
+                alert('Воспользуйтесь калькулятором!')
+                return;
+            }
+        }
 
         if (validate(formElements)) {
             sendData(formBody).then(data => {
