@@ -1,12 +1,6 @@
-export const sendForm = (formName, total) => {
+export const sendForm = (formName) => {
     const form = document.querySelector(formName);
-    const statusBlock = document.createElement('div');
-    const calcTotal = document.querySelector('#calc-total');
-    let price;
 
-    if (total) {
-        price = document.querySelector(total);
-    }
 
     function noValid(element) {
         element.style.border = '5px solid red';
