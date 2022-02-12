@@ -62,4 +62,9 @@ export const modal = (window, butt, closeButt, numBtn) => {
             overlay.style.display = 'none';
         }
     })
+
+    overlay.addEventListener('click', (e) => {
+        modalWind.style.display = 'none';
+        overlay.style.display = 'none';
+    });
 }
