@@ -15,7 +15,6 @@ export const modalImg = () => {
             docContainer.appendChild(modal);
             modal.appendChild(imgBig);
             modal.style.display = "block";
-            console.log(modal);
         }
     });
 

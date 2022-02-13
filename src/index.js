@@ -6,6 +6,7 @@ import { validator } from "./modules/validator";
 import { modalImg } from "./modules/modalImg";
 import { scroolTop } from "./modules/scroolTop";
 import { calculator } from "./modules/calculator"
+import { comments } from "./modules/comments"
 
 modal('.header-modal', '.button', '.header-modal__close', 1);
 modal('.services-modal', '.service-button', '.services-modal__close', 4);
@@ -31,3 +32,5 @@ modalImg();
 scroolTop();
 
 if (document.title === 'Остекление балконов и лоджий') calculator();
+
+comments();
