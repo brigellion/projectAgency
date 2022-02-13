@@ -74,6 +74,6 @@ export const comments = () => {
 	getComments().then(data => {
 		render(data.comments[counter], data.comments[counter + 1], data.comments[counter + 2]);
 		counter = 1;
-		let timerId = setInterval(() => slicer(data.comments), 3000);
+		let timerId = setInterval(() => slicer(data.comments), 20000);
 	});
 }
