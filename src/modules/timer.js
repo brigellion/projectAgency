@@ -32,9 +32,14 @@ export const timer = (deadline, container) => {
             timerHours.textContent = getZero(getTime.hours);
             timerMinutes.textContent = getZero(getTime.minutes);
             timerSeconds.textContent = getZero(getTime.seconds);
-            if (getTime.timeRemaining < 0) {
+            if (getTime.timeRemaining <= 0) {
                 clearInterval(interval);
             }
+        } else {
+            timerDays.textContent = '0';
+            timerHours.textContent = '00';
+            timerMinutes.textContent = '00';
+            timerSeconds.textContent = '00';
         }
     };
     updateClock();

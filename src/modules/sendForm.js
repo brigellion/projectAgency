@@ -1,6 +1,8 @@
 export const sendForm = (formName) => {
     const form = document.querySelector(formName);
-
+    const modalHeader = document.querySelector('.header-modal');
+    const modalServices = document.querySelector('.services-modal');
+    const overlay = document.querySelector('.overlay');
 
     function noValid(element) {
         element.style.border = '5px solid red';
@@ -49,7 +51,7 @@ export const sendForm = (formName) => {
         const formElements = form.querySelectorAll('input');
         const formData = new FormData(form);
         const formBody = {};
-
+        console.log(formElements);
         formData.forEach((val, key) => {
             formBody[key] = val;
         });
@@ -69,16 +71,17 @@ export const sendForm = (formName) => {
         if (validate(formElements)) {
             sendData(formBody).then(data => {
                 formElements.forEach(element => {
-                    element.value = '';
+                    if (element.name == 'fio' || element.name == 'phone') {
+                        element.value = '';
+                    }
                 });
             }).then(data => {
-                formElements.forEach(element => {
-                    element.value = '';
-                });
-            })
-                .catch(error => {
-                    console.log('Data-Form-Error', error);
-                });
+                modalHeader.style.display = 'none';
+                modalServices.style.display = 'none';
+                overlay.style.display = 'none';
+            }).catch(error => {
+                console.log('Data-Form-Error', error);
+            });
         }
     }
 
@@ -88,6 +91,7 @@ export const sendForm = (formName) => {
         }
         form.addEventListener('submit', (event) => {
             event.preventDefault();
+            console.log(event);
             submitForm();
         });
     } catch (error) {

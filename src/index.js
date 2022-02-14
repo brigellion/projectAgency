@@ -28,9 +28,18 @@ validator();
 sendForm('.order-form form[name=action-form]');
 sendForm('.order-form form[name=action-form2]');
 
+
+sendForm('.header-modal form[name=callback-form]');
+sendForm('.services-modal form[name=application-form]');
+
+/*console.log(document.querySelector('.order-call-modal form[name=callback-form]'));
+console.log(document.querySelector('.order-call-modal form[name=application-form]'));*/
+
+
+
+
 modalImg();
 scroolTop();
-
 if (document.title === 'Остекление балконов и лоджий') calculator();
 
 comments();
