@@ -4,6 +4,8 @@ export const modal = (window, butt, closeButt, numBtn) => {
 
     const modalWind = document.querySelector(window);
     const overlay = document.querySelector('.overlay');
+
+
     if (numBtn == 1) {
         const button = document.querySelector(butt);
         button.addEventListener('click', (e) => {
@@ -29,7 +31,10 @@ export const modal = (window, butt, closeButt, numBtn) => {
                 if (e.target.closest('.fancyboxModal')) {
                     modalWind.style.display = 'block';
                     overlay.style.display = 'block';
-
+                    const form = document.querySelector('.services-modal form[name=application-form]');
+                    const subject = form.querySelector('input[name=subject]');
+                    console.log(e.target.getAttribute('data-subject'));
+                    subject.value = e.target.getAttribute('data-subject');
                     animate({
                         duration: 1000,
                         timing(timeFraction) {

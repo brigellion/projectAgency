@@ -1,10 +1,12 @@
 export const timer = (deadline, container) => {
 
     const field = document.querySelector(`#${container}`);
+    const text = document.querySelector('.countdown-text');
     const timerDays = field.querySelector('.count_1 > span');
     const timerHours = field.querySelector('.count_2 > span');
     const timerMinutes = field.querySelector('.count_3 > span');
     const timerSeconds = field.querySelector('.count_4 > span');
+
 
     const getTimeRemaining = () => {
         let dateStop = new Date(deadline).getTime();
@@ -27,6 +29,7 @@ export const timer = (deadline, container) => {
 
     function updateClock() {
         let getTime = getTimeRemaining();
+        let interval = setInterval(updateClock, 500);
         if (getTime.seconds >= 0) {
             timerDays.textContent = getTime.days;
             timerHours.textContent = getZero(getTime.hours);
@@ -36,12 +39,20 @@ export const timer = (deadline, container) => {
                 clearInterval(interval);
             }
         } else {
-            timerDays.textContent = '0';
+            text.innerHTML = `Акция закончилась!
+            <div class="count-wrap">
+                <div class="count count_1">Дней:</br> <span>00</span></div>
+                <div class="count count_2">Часов:</br> <span>00</span></div>
+                <div class="count count_3">Минут:</br> <span>00</span></div>
+                <div class="count count_4">Секунд:</br> <span>00</span></div>
+            </div>`;
+            clearInterval(interval);
+            /*timerDays.textContent = '0';
             timerHours.textContent = '00';
             timerMinutes.textContent = '00';
-            timerSeconds.textContent = '00';
+            timerSeconds.textContent = '00';*/
         }
     };
     updateClock();
-    let interval = setInterval(updateClock, 500);
+
 };

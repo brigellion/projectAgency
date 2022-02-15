@@ -4,6 +4,7 @@ export const sendForm = (formName) => {
     const modalServices = document.querySelector('.services-modal');
     const overlay = document.querySelector('.overlay');
 
+
     function noValid(element) {
         element.style.border = '5px solid red';
         setTimeout(() => {
